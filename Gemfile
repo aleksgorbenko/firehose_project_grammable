@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 # firehose gems
+group :development, :test do
+  gem 'rspec-rails', '~> 3.4'
+end
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
