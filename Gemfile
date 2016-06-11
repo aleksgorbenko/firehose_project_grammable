@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
 end
-
+gem 'sprockets', '2.11.0'
+gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,7 +15,7 @@ gem 'rails', '4.0.1'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
