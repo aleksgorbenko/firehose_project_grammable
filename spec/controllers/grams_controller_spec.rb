@@ -20,9 +20,19 @@ RSpec.describe GramsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+
+    it "should redirect users to be logged in" do
+      get :new
+      expect(response).to redirect_to new_user_session_path
+    end
   end
 
   describe "grams#create action" do
+    it "should redirect users to be logged in" do
+      post :create, gram: {message: "Hello!"}
+      expect(response).to redirect_to new_user_session_path
+    end
+
     it "should successfully create a new gram in our database" do
       user = User.create(
         email:                 'fakeuser@gmail.com',
