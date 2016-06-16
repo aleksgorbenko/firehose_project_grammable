@@ -1,6 +1,49 @@
 require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
+  ### UPDATE gram ###
+  describe "grams#update" do
+    it "should allow users to successfully update grams" do
+      gram = FactoryGirl.create(:gram, message: 'Initial Value')
+      patch :update, id: gram.id, gram: { message: 'Changed'}
+      expect(response).to redirect_to root_path
+
+      gram.reload
+      expect(gram.message).to eq('Changed')
+    end
+
+    it "should have http 404 error if the gram cannot be found" do
+      patch :update, id: "TAMAKUN", gram: { message: 'Changed'}
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it "should render the edit form with the http status of unprocessable_entity" do
+      gram = FactoryGirl.create(:gram, message: 'Initial Value')
+      patch :update, id: gram.id, gram: { message: ''}
+      expect(response).to have_http_status(:unprocessable_entity)
+
+      gram.reload
+      expect(gram.message).to eq('Initial Value')
+    end
+  end
+
+  ### EDIT gram ###
+
+  describe "grams#edit" do
+    it "should successfully show the edit form if the gram is found" do
+      gram = FactoryGirl.create(:gram)
+      get :edit, id: gram.id
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should return a 404 error message if the gram is not found" do
+      get :edit, id: "TAMAKUN"
+      expect(response).to have_http_status(:not_found)
+    end
+  end
+
+  ### SHOW gram ###
+
   describe "grams#show action" do
     it "should successfully show the page if the gram is found" do
       gram = FactoryGirl.create(:gram)
@@ -9,10 +52,12 @@ RSpec.describe GramsController, type: :controller do
     end
 
     it "should return 404 error is the gram is not found" do
-      get :show, id: "TACOCAT"
+      get :show, id: "BUGAGA"
       expect(response).to have_http_status(:not_found)
     end
   end
+
+  ### SHOW homepage ###
 
   describe "grams#index action" do
     it "should successfully show the page" do
@@ -20,6 +65,8 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  ### NEW gram ###
 
   describe "grams#new action" do
     it "should successfully show the new form" do
@@ -35,6 +82,8 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
   end
+
+  ### CREATE new gram ###
 
   describe "grams#create action" do
     it "should redirect users to be logged in" do
