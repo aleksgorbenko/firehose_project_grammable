@@ -20,11 +20,11 @@ class GramsController < ApplicationController
     return gram_not_found if @gram.blank?
 
     @gram.update_attributes(gram_params)
-    if @gram.valid?
-      redirect_to root_path
-    else
-      return invalid_gram
-    end
+      if @gram.valid?
+        redirect_to root_path
+      else
+        return invalid_gram
+      end
   end
 
   def new
@@ -38,6 +38,13 @@ class GramsController < ApplicationController
       else
         return invalid_gram
       end
+  end
+
+  def destroy
+    @gram = Gram.find_by_id(params[:id])
+    return gram_not_found if @gram.blank?
+    @gram.destroy
+    redirect_to root_path
   end
 
   private
