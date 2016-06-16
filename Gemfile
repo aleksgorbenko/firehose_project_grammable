@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # firehose gems
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
+  gem 'factory_girl_rails', "~> 4.0"
 end
 gem 'sprockets', '2.11.0'
 gem 'bootstrap-sass', '~> 3.3.5.1'
