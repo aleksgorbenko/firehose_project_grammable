@@ -35,6 +35,8 @@ ActiveRecord::Migration.check_pending!
 RSpec.configure do |config|
   # devise test cases:
   config.include Devise::TestHelpers, type: :controller
+  # to pass tests with using a fixture image:
+  include ActionDispatch::TestProcess
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
