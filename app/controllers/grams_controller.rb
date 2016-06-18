@@ -2,7 +2,7 @@ class GramsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-
+    @grams = Gram.all
   end
 
   def show
@@ -22,7 +22,7 @@ class GramsController < ApplicationController
     return render_not_found(:forbidden) if @gram.user != current_user
 
     @gram.update_attributes(gram_params)
-    (@gram.valid?) ? (redirect_to root_path) : (return invalid_gram)
+    @gram.valid? ? (redirect_to root_path) : (return invalid_gram)
   end
 
   def new
@@ -31,7 +31,7 @@ class GramsController < ApplicationController
 
   def create
     @gram = current_user.grams.create(gram_params)
-    (@gram.valid?) ? (redirect_to root_path) : (return invalid_gram)
+    @gram.valid? ? (redirect_to root_path) : (return invalid_gram)
   end
 
   def destroy
@@ -46,7 +46,7 @@ class GramsController < ApplicationController
   private
 
   def gram_params
-    params.require(:gram).permit(:message)
+    params.require(:gram).permit(:message, :picture)
   end
 
   def render_not_found(status=:not_found)
