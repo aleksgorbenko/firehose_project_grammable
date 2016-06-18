@@ -5,4 +5,11 @@
     <%= image_tag gram.picture %>
     <%= gram.message %>
   </div>
+  <div>
+  <h3>Comments</h3>
+  <% simple_form_for @comment do |f| %>
+    <%= f.input_field :message %>
+    <%= f.submit "Post a Comment" %>
+  <% end %>
+  </div>
   <% end %>

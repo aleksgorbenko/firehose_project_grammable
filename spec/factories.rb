@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :comment do
+
+  end
   factory :user do
     sequence :email do |n|
       "dummyEmail#{n}@mgmail.com"
@@ -14,4 +17,11 @@ FactoryGirl.define do
 
     association :user
   end
+
+  # factory :comment do
+  #   message "comment"
+
+  #   association :user
+  #   association :gram
+  # end
 end
