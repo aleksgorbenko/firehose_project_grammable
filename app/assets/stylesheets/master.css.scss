@@ -9,6 +9,10 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 
+hr {
+  margin: 0;
+}
+
 /* NAVBAR */
 
 .top-nav {
@@ -20,7 +24,7 @@ body {
 
 .top-nav .add a {
   font-weight: 700;
-  color: #125688;
+  color: #A030B2;
   font-size: 16px;
   padding-left: 8px;
 }
@@ -30,15 +34,28 @@ body {
 }
 
 .brand {
-  color: #125688;
+  color: #80278F;
   font-size: 30px;
   font-family: "Pacifico", cursive;
+  margin-right: 40px;
 }
 
 .add .nav-user-email {
   text-decoration: underline;
   font-weight: 600;
 }
+
+.add a.new-post-btn {
+  color: #fff;
+  background-color: #A030B2;
+  padding: 11px;
+}
+
+.add a.new-post-btn:hover {
+  background-color: #80278F;
+  text-decoration: none;
+}
+
 
 /*.add .sign-out-btn {
   border: 3px solid #125688;
@@ -56,16 +73,38 @@ body {
 }
 
 .handle {
-  margin: 10px;
-  color: #125688;
+  margin: 30px;
+  color: #A030B2;
   font-weight: 700;
   font-size: 18px;
+}
+
+.glyphicon-user {
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  background-color: #fafafa;
+  padding: 20px
 }
 
 .card p,
 .card .message {
   font-size: 18px;
-  margin: 20px;
+  margin: 20px 30px;
+}
+
+.comments {
+  padding: 5px 70px 20px 70px;
+}
+
+.comment {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.comment-handle {
+  font-weight: 700;
+  font-size: 18px;
+  color: #A030B2;
 }
 
 .gram-actions {
@@ -76,13 +115,14 @@ body {
   font-size: 16px;
   font-weight: 700;
   margin-right: 20px;
+  color: #A030B2;
 }
 
-a.delete-btn {
+.gram-actions a.delete-btn {
   color: #999;
 }
 
-a.delete-btn:hover {
+.gram-actions a.delete-btn:hover {
   color: red;
 }
 
@@ -106,7 +146,7 @@ input {
 }
 
 .action-btn {
-  background-color: #125688;
+  background-color: #A030B2;
   width: 100%;
   border: none;
   font-size: 24px;
@@ -117,7 +157,7 @@ input {
 
 .action-btn:hover,
 .action-btn:active {
-  background-color: #1E71B2;
+  background-color: #80278F;
   font-weight: 500;
   color: #fff;
 }
