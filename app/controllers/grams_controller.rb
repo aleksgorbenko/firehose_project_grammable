@@ -33,6 +33,7 @@ class GramsController < ApplicationController
   def create
     @gram = current_user.grams.create(gram_params)
     @gram.valid? ? (redirect_to root_path) : (return invalid_gram)
+    flash[:success] = "Gram posted successfully!"
   end
 
   def destroy

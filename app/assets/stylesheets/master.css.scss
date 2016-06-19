@@ -22,15 +22,15 @@ hr {
   padding-top: 15px;
 }
 
+.top-nav .add {
+  margin-top: 10px;
+}
+
 .top-nav .add a {
   font-weight: 700;
   color: #A030B2;
   font-size: 16px;
   padding-left: 8px;
-}
-
-.top-nav .add {
-  margin-top: 10px;
 }
 
 .brand {
@@ -55,11 +55,6 @@ hr {
   background-color: #80278F;
   text-decoration: none;
 }
-
-
-/*.add .sign-out-btn {
-  border: 3px solid #125688;
-}*/
 
 /* GRAMS */
 
@@ -164,7 +159,6 @@ input {
 
 /* SIGN UP/IN */
 
-
 .input.boolean {
   margin-left:18px;
   margin-top: 5px;
@@ -173,4 +167,25 @@ input {
 .input.boolean label {
   margin-top: 5px;
   line-height: 44px;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 100px;
+}
+
+.social-button {
+  width: 45px;
+  margin: 15px;
+  background-color: #fafafa;
+  border-radius: 50%;
+}
+
+.social-button:hover {
+  background-color: #80278F;
+}
+
+.footer-social a {
+  text-decoration: none;
 }
