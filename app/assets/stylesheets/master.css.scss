@@ -1,0 +1,136 @@
+/* GLOBAL */
+
+.clr {
+  clear:both;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* NAVBAR */
+
+.top-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #edeeee;
+  height: 70px;
+  padding-top: 15px;
+}
+
+.top-nav .add a {
+  font-weight: 700;
+  color: #125688;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.top-nav .add {
+  margin-top: 10px;
+}
+
+.brand {
+  color: #125688;
+  font-size: 30px;
+  font-family: "Pacifico", cursive;
+}
+
+.add .nav-user-email {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/*.add .sign-out-btn {
+  border: 3px solid #125688;
+}*/
+
+/* GRAMS */
+
+.card {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid #e8e8e8;
+  margin-top: 40px;
+  padding: 0;
+}
+
+.handle {
+  margin: 10px;
+  color: #125688;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.card p,
+.card .message {
+  font-size: 18px;
+  margin: 20px;
+}
+
+.gram-actions {
+  margin-bottom: 10px;
+}
+
+.gram-actions a {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+a.delete-btn {
+  color: #999;
+}
+
+a.delete-btn:hover {
+  color: red;
+}
+
+/* NEW GRAM */
+
+.card.form {
+  padding: 30px;
+}
+
+label,
+input {
+  font-size: 18px;
+}
+
+input {
+  font-weight: 400;
+}
+
+.card .form-control {
+  border-radius: 0;
+}
+
+.action-btn {
+  background-color: #125688;
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+.action-btn:hover,
+.action-btn:active {
+  background-color: #1E71B2;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* SIGN UP/IN */
+
+
+.input.boolean {
+  margin-left:18px;
+  margin-top: 5px;
+}
+
+.input.boolean label {
+  margin-top: 5px;
+  line-height: 44px;
+}

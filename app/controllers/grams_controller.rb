@@ -3,7 +3,7 @@ class GramsController < ApplicationController
 
   def index
     @grams = Gram.all
-    # @comment = Comment.new
+    @comment = Comment.new
   end
 
   def show
